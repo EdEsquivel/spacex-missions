@@ -1,5 +1,6 @@
 import { BsCalendarDate } from "react-icons/bs";
 import { Box, Flex, Text, Spacer, Tag, Button } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 export function LaunchItem(launch) {
   return (
@@ -19,9 +20,11 @@ export function LaunchItem(launch) {
           {launch.launch_date_local.split("T")[0]}
         </Text>
       </Flex>
-      <Button m={2} colorScheme="blue">
-        More Details
-      </Button>
+      <Link to={`/launch/${launch.flight_number}`}>
+        <Button m={2} colorScheme="blue">
+          More Details
+        </Button>
+      </Link>
     </Box>
   );
 }
